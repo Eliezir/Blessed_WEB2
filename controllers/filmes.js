@@ -15,8 +15,8 @@ module.exports = function(app){
         nacional: function(req,res){
             //acesso a pagina adam sandler
             res.render("filmes/nacional")
-        },
+        }, 
         
-    }
+    };
     return filmeController;
 }
