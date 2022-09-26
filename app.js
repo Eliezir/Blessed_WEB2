@@ -26,7 +26,7 @@ load('models')
 .into(app);
 
 app.listen(3000,function(){
-  console.log("Veterano 16 na área!")
+  console.log("Tudo ok!")
 })
 
 

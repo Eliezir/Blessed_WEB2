@@ -58,7 +58,7 @@ p.copymsg {
 
 #header {
   background-color:#141414;
-  border-bottom: #acacac solid 1px; 
+  /* border-bottom: #acacac solid 1px;  */
 }
 
 .container-fluid {
