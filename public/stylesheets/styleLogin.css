@@ -9,6 +9,11 @@
   color: white;
 }
 
+.visibility{
+  font-size: 30px;
+  color:white;
+}
+
 :root {
   --white: #FFF;
   --whitesmoke: #F9F9F9;
@@ -66,21 +71,25 @@ body{
   display:flex;
   margin-bottom:20px;
   width:100%;
-  background-color:var(--light-grey);
   border-radius:5px;
-  border:5px solid #202020;
+  border:3px solid #202020;
+  background-color:#202020;
 }
 
+
+
+
+
 .input{
+  background-color:transparent;
+  border: none;
   width:100%;
   border-radius:5px;
-  background-color:#202020;
-/*   border:2px solid #202020;
- */  outline:none;
+  outline:none;
   font-size:0.9em;
   padding:25px 10px 10px;
   font-weight:600;
-  color:var(--deep-grey);
+  color:var(--whitesmoke);
 }
 
 .login__label span{
@@ -95,13 +104,13 @@ body{
 }
 
 .login__label:focus-within{
-  background-color:var(--whitesmoke);
-
-  border:var(--purple) solid 5px;
+  background-color:var(--deep-grey);
+  border:var(--purple) solid 3px;
 }
 
 .login__label:focus-within .input, .login__label:focus-within .password__visible{
-  background-color:var(--whitesmoke);
+  background-color:var(--deep-grey);
+
 }
 
 .login__label .span-active{
@@ -110,7 +119,7 @@ body{
 }
 
 .password__visible{
-  background-color:var(--light-grey);
+  background-color:var(--whitesmoke);
   display:none;
   align-items: center;
   cursor:auto;  
@@ -119,7 +128,7 @@ body{
 }
 
 .password__visible i{
-  color: var(--deep-grey);
+  color: var(--whitesmoke);
   cursor:pointer;
 }
 
@@ -186,7 +195,7 @@ body{
 
 
 .input--checkbox:checked{
-  background-color:var(--red);
+  background-color:var(--purple);
 }
 
 .input--checkbox:checked::after{
