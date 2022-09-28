@@ -5,6 +5,9 @@ module.exports = function(app){
 
             res.render("home/index")
         },
+        login: function(req,res){
+            res.render("home/login")
+        }
         
     }
     return homeController;
