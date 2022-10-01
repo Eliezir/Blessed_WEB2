@@ -252,3 +252,17 @@ body{
   font-weight: 500;
   display: flex;
   align-items: center;}
+
+  .divEntrar{
+    display: flex;
+    height: 40px;
+
+  }
+  .entrar{
+    width: 180px;
+    height: 35px;
+    padding: 5px;
+    background-color: #7442d8;
+    border: 0;
+    border-radius: 10px;
+  }
