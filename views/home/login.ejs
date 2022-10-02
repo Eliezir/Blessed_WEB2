@@ -26,24 +26,20 @@
   <title>The Blessed - Login</title>
 </head>
 
-
-
-
 <body>
 
   <%- include('../navbar.ejs') %>
-    <div class="main">
+  <form action="/entrar" method="post" class="main">
       <div class="loginScreen">
         <h1 class="login__title">Fazer login</h1>
-
         <label class="login__label">
           <span>nome de usuário</span>
-          <input type="text" name="username" class="input">
+          <input type="text" name="usuario[user]" class="input">
         </label>
 
         <label id="password" class="login__label">
-          <span class="span">senha</span>
-          <input type="password" name="password" class="input">
+          <span id='span-senha' class="span">senha</span>
+          <input type="password" name="usuario[password]" class="input" id="senha">
           <button type="button" class="password__visible">
             <i class="material-icons visibility">visibility_off</i></button>
         </label>
@@ -53,7 +49,7 @@
             <input type="checkbox" class="input--checkbox">
             Manter login
           </label>
-          <button type="button" class="entrar">Entrar</button>
+          <button type="submit" class="entrar" disabled>Entrar</button>
         </div>
         <div class="login__icons">
           <button type="button" class="icons__button">
@@ -70,7 +66,7 @@
         </div>
 
       </div>
-    </div>
+    </form>
     </div>
     <%- include('../footer.ejs') %>
       <script src='JS/login.js'></script>

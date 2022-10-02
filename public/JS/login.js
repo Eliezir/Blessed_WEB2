@@ -1,5 +1,5 @@
 const inputs = document.querySelectorAll('.input');
-const button = document.querySelector('.login__button');
+const button = document.querySelector('.entrar');
 const password_icon = document.querySelector(".password__visible");
 const visibility_icon = document.querySelector(".visibility");
 const password_label = document.querySelector("#password");
@@ -11,7 +11,7 @@ const handleFocus = ({target}) => {
     target = inputs[1]}
   const span = target.parentElement.firstElementChild;
   span.classList.add('span-active');  
-  if(target.name == "password"){
+  if(target.id == "senha"){
     password_icon.classList.add('password__visible-active')
   }
 }
@@ -27,8 +27,11 @@ const handleFocusOut = ({target}) => {
 
 document.querySelector("body").addEventListener('click',function(e){
   var fora = !password_label.contains(e.target);
-    if(fora){
+    if(fora && inputs[1].type != 'text' ){
       password_icon.classList.remove('password__visible-active')
+    }
+    if(fora && inputs[1].value === '' ){
+        document.getElementById('span-senha').classList.remove('span-active');
     }
 })
 
@@ -36,7 +39,7 @@ document.querySelector("body").addEventListener('click',function(e){
 const handleChange = () => {
   const[username , password] = inputs;
 
-if(username.value && password.value.length >= 8){
+if(username.value.length >= 3 && password.value.length >= 3){
   button.removeAttribute('disabled')
 }
 else{

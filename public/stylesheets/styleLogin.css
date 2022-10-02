@@ -20,7 +20,7 @@
   --light-grey: #ECECEC;
   --grey: #C4C4C4;
   --medium-grey: #A7A7A7;
-  --deep-grey: #343434;
+  --deep-grey: #181818;
   --dark-grey: #141414;
   --red: #CF3C3F;
   --purple:#7442d8;
@@ -31,7 +31,7 @@ body{
 
 
 .main{
-    height: 50vh;
+    height: 85vh;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -119,7 +119,7 @@ body{
 }
 
 .password__visible{
-  background-color:var(--whitesmoke);
+  background-color:transparent;
   display:none;
   align-items: center;
   cursor:auto;  
@@ -209,33 +209,20 @@ body{
   margin: 4px auto;
 }
 
-.login__button{
-  width:60px;
-  height:60px;
-  padding:20px;
-  display:flex;
-  align-items: center;
-  justify-content: center;
-  background-color:var(--red);
-  border-radius:20px;
-  border:none;
-  cursor:pointer;
-  margin-bottom: 60px;;
-}
 
-.login__button svg{
-  fill:white}
 
-  .login__button:disabled{
+  .entrar:disabled{
   cursor:auto;
-  background-color:white;
-  border: 2px solid var(--light-grey); 
+  background-color:transparent;
+  border: 2px solid var(--deep-grey);
   }
 
+  .entrar:disabled:hover{
+    cursor:not-allowed;
+    background-color:transparent;
 
-  .login__button:disabled svg{
-    fill:var(--grey);
   }
+
 
   .login__link{
     font-size: 0 8em;
