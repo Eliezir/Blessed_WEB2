@@ -3,6 +3,7 @@ module.exports = function(app){
         index: function(req, res){
             let usuario = req.session.usuario;
             let params = {usuario: usuario}
+            console.log(params)
             res.render("perfil/index", params)
         },
         create: function(req, res){
