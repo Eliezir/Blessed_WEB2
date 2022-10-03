@@ -27,17 +27,16 @@
 </head>
 
 <body>
-    <%- include('../navbar.ejs') %>
-      <div class="userPerfil">
-        <div class="icon"></div>
-      <h2 class="Nome">Veterano 16</h2>
-      
-      <br>
-      </div>
+    <%- include('./navbar.ejs') %>
+    <header>
+      <h1>Ntalk</h1>
+        <h3>Pane no sistema alguém me desconfigurou</h3>
+    </header>
+    <%- error.message %>
 
+        <p>Clique aqui para voltar a <a href="/">pagina inicial</a> :)</p>
 
-    <a href="/sair">Sair</a>
-    <%- include('../footer.ejs') %>
+    <%- include('./footer.ejs') %>
    
 </body>
 

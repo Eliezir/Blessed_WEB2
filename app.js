@@ -5,7 +5,11 @@ let bodyParser = require("body-parser"); //#
 let cookieParser = require("cookie-parser"); //#
 let expressSession = require("express-session"); //#
 let methodOverride = require("method-override");
+let error = require("./middlewares/error"); // #!
 var app = express();
+
+
+
 
 
 app.set('views', path.join(__dirname, 'views'));
@@ -16,6 +20,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(express.static(path.join(__dirname, "public")));
+
+load("models").then("controllers").then("routes").into(app);
+app.use(error.notFound);
+app.use(error.serverError);
+
+
 
 
 

@@ -4,8 +4,10 @@ module.exports = function(app){
             res.render("home/index")
         },
         login: function(req,res){
+            console.log(req.body)
             let user = req.body.usuario.user;
             let password = req.body.usuario.password;
+          
             if(user && password){
                 let usuario = req.body.usuario;
                 usuario["comentarios"] = [];

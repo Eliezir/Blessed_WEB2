@@ -22,7 +22,7 @@ module.exports = function(app){
             usuario = req.session.usuario,
             comentario = usuario.comentario[id],
             params = { usuario: usuario, comentario: comentario, id: id };
-            res.render("comentario/edit", params);
+            res.render("perfil/edit", params);
             },
             update: function (req, res) {
                 var comentario = req.body.comentario,
