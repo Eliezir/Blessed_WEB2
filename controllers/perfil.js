@@ -4,12 +4,11 @@ module.exports = function(app){
             let usuario = req.session.usuario;
             let comentarios = usuario.comentarios
             let params = {usuario: usuario, comentarios: comentarios}
-            console.log(params)
             res.render("perfil/index", params)
         },
         create: function(req, res){
             var comentario = req.body.comentario,
-            usuario = req.session.ususario;
+            usuario = req.session.usuario;
             usuario.comentarios.push(comentario);
             res.redirect("/perfil")
         },
