@@ -2,7 +2,8 @@ module.exports = function(app){
     let PerfilController = {
         index: function(req, res){
             let usuario = req.session.usuario;
-            let params = {usuario: usuario}
+            let comentarios = usuario.comentarios
+            let params = {usuario: usuario, comentarios: comentarios}
             console.log(params)
             res.render("perfil/index", params)
         },

@@ -31,10 +31,18 @@
       <div class="userPerfil">
         <div class="icon"></div>
       <h2 class="Nome"><%= usuario.user %></h2>
-      
+      <button>Create</button>
       <br>
       </div>
-
+      <div class="comentarios">
+        <% comentarios.forEach(function(comentario,index){ %>
+          <div class="comentario">
+            <h3><%- comentario.filme%></h1>
+            <p><%- comentario.nota%></p>
+          </div>
+          <%})%>
+      </div>
+    
 
     <a href="/sair">Sair</a>
     <%- include('../footer.ejs') %>

@@ -41,7 +41,7 @@ body{
     padding:25px;
     width: 500px;
     border-radius: 25px;
-    border:var(--purple) solid 3px;
+/*     border:var(--purple) solid 3px; */
 }
 
 .login{

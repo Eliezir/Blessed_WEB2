@@ -9,7 +9,7 @@ module.exports = function(app){
           
             if(user && password){
                 let usuario = req.body.usuario;
-                usuario["comentarios"] = [];
+                usuario["comentarios"] = [{filme:'Click',nota:5},{filme:'Adão Negro',nota:3.5}];
                 req.session.usuario = usuario;
                 res.redirect("/perfil")
 

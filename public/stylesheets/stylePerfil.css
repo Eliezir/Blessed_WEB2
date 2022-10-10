@@ -27,3 +27,18 @@
     padding-bottom: 5px;
 }
 
+.comentarios{
+    display: flex;
+}
+
+.comentario{
+    background-color: blueviolet;
+    margin:5px;
+    display:flex;
+    flex-direction: column;
+    width: 200px;
+    align-items: center;
+    border-radius: 5px;
+    height: 150px;
+    
+}
