@@ -32,6 +32,7 @@
 }
 
 .comentario{
+    position: relative;
     background-color: blueviolet;
     margin:5px;
     display:flex;
@@ -40,5 +41,47 @@
     align-items: center;
     border-radius: 5px;
     height: 150px;
-    
 }
+
+.crud-icons > div{
+    width: 20px;
+    height: 20px;
+    border-radius: 8px;
+    margin: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.crud-icons{
+position:absolute;
+right: 5px;
+bottom:10px;
+display: none;
+flex-direction: column
+}
+
+.crud-icons > div > i{ 
+    color:white;
+    font-size: 10px;
+}
+
+.icon-edit{
+    background-color: green;
+}
+.icon-delete{
+    background-color: red;
+}
+.icon-show{
+    background-color: blue;
+}
+
+.comentario:hover > .crud-icons{
+    display: flex;
+}
+
+.crud-icons>div:hover > i{
+    cursor:pointer;
+    opacity: 0.7;
+}
+

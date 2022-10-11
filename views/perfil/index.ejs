@@ -38,13 +38,25 @@
         <% comentarios.forEach(function(comentario,index){ %>
           <div class="comentario">
             <h3><%- comentario.filme%></h1>
-            <p><%- comentario.nota%></p>
+              <div class="crud-icons">
+                <div class="icon-edit">
+                  <i class="fa-solid fa-pencil"></i>
+                </div>
+                <div class="icon-delete">
+                  <i class="fa-solid fa-trash"></i>
+                </div>
+                <div class="icon-show">
+                <i class="fa-solid fa-info"></i>
+                </div>
+                
+              </div>
+           <!--  <img src="imagens/<%-comentario.filme %>"> -->
             <div class="rating">
               <% for(var e = 0; e < Math.floor(comentario.nota); e++){%>
               <span class="fa fa-star checked"></span>
               <%}%>
               <%if(comentario.nota % 1 != 0){%>
-                <span class="fa fa-star-half-o  checked"</span>
+                <span class="fa fa-star-half-o  checked"></span>
                 <%}%>
                 <% for(var e = 0; e < Math.floor(5 - comentario.nota); e++){%>
                   <span class="fa fa-star-o checked"></span>
