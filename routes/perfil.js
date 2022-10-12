@@ -4,5 +4,6 @@ module.exports = function(app){
     app.get('/perfil',autenticar, perfil.index )
     app.post("/perfil/comentario",autenticar, perfil.create)
     app.get("/perfil/:id/editar",autenticar, perfil.edit)
-    app.delete("/perfil/:id/comentario",autenticar, perfil.destroy);
+    app.delete("/perfil/comentario/:id/",autenticar, perfil.destroy);
+  /*   app.get("/comentario/:id", perfil.show); */
 };
