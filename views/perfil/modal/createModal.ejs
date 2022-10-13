@@ -1,0 +1,22 @@
+   <!--   Modal Create -->
+   <div class="modal fade" id="modalC" tabindex="-1" aria-labelledby="modalCreateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="CreateModalLabel">Comentar</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form id='createButton' action="/perfil/comentario" method="post">
+                <input type="text" name="comentario[filme]" placeholder="Titulo" />
+                <input type="text" name="comentario[nota]" placeholder="0-5" />
+        </div>
+        <div class="modal-footer">
+          <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         
+            <button  type="submit" class="btn btn-success btn-primary">Comentar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

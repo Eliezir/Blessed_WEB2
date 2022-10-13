@@ -27,15 +27,16 @@
 </head>
 <body>
   <%- include('../navbar.ejs') %>
+  <header>
     <div class="userPerfil">
       <div class="icon"></div>
       <h2 class="Nome">
         <%= usuario.user %>
       </h2>
-      <p><%-id%></p>
-      <button>Create</button>
-      <br>
     </div>
+      <button class='btn-create' data-bs-toggle="modal" data-bs-target="#modalC"> +</button>
+    </header>
+   
     <div class="comentarios">
       <% comentarios.forEach(function(comentario,index){ %>
         <div class="comentario">
@@ -71,33 +72,10 @@
         <%})%>
 
 
-          <!--   Modal Delete -->
-          <div class="modal fade" id="modalDelete" tabindex="-1" aria-labelledby="modalDeleteLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">Delete</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  Você tem certeza que deseja deletar esse comentário?
-                </div>
-                <div class="modal-footer">
-                  <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                 
-                  <form id='deleteButton' action="  " method="post">
-                    <button  type="submit" class="btn btn-danger btn-primary">Excluir</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
+        <%- include('./modal/deleteModal.ejs')%>
+        <%- include('./modal/createModal.ejs')%>
     </div>
-    <form action="/perfil/comentario" method="post">
-      <input type="text" name="comentario[filme]" placeholder="Titulo" />
-      <input type="text" name="comentario[nota]" placeholder="0-5" />
-      <button type="submit">Cadastrar</button>
-    </form>
+ 
 
     <a href="/sair">Sair</a>
     <%- include('../footer.ejs') %>
