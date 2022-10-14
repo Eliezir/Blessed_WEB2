@@ -13,7 +13,9 @@
             <li class="nav-item"><a class="nav-link" href="/lancamentos">Lançamentos</a></li>
             <li class="nav-item"><a class="nav-link" href="">Series</a></li></ul>
             <ul class="navbar-nav ms-auto">
-              <li class="nav-item"><a class="nav-link" href="">Login</a></li>
+              <%var usuario; console.log(usuario)%>
+              <%var logado = usuario ? 'Perfil':'Login'%>
+              <li class="nav-item"><a class="nav-link" href=""><%-logado%></a></li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink"
                 role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Entre em contato</a>

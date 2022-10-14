@@ -1,7 +1,9 @@
 module.exports = function(app){
     var homeController = {
         index: function(req,res){
-            res.render("home/index")
+            let usuario = req.session.usuario;
+            let params = {usuario: usuario}
+            res.render("home/index",params)
         },
         login: function(req,res){
             let user = req.body.usuario.user;

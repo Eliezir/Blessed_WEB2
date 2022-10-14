@@ -24,7 +24,7 @@ for(var x = 1; x <= 5;x++){
 
 $(function() {
     var filmes = [
-      "Click","Um Faz De Conta Que Acontece"
+      "Click","Um Faz De Conta Que Acontece",'Harry Potter'
     ];
     $("#filmeTitle" ).autocomplete({
       source: filmes
