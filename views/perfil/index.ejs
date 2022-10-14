@@ -23,10 +23,15 @@
   <!-- Css -->
   <link rel="stylesheet" href="stylesheets/stylePerfil.css">
   <link rel="stylesheet" href="stylesheets/default.css">
+<!-- jquery -->
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <title>The Blessed</title>
 </head>
 <body>
   <%- include('../navbar.ejs') %>
+  <div class="container-fluid main-container">
   <header>
     <div class="userPerfil">
       <div class="icon"></div>
@@ -55,7 +60,7 @@
                 </div>
 
               </div>
-              <!--  <img src="imagens/<%-comentario.filme %>"> -->
+               <img  class='posterComentario' src="imagens/cliches/tdsGarotos/todosOsGarotos300.png">
               <div class="rating">
                 <% for(var e=0; e < Math.floor(comentario.nota); e++){%>
                   <span class="fa fa-star checked"></span>
@@ -67,7 +72,6 @@
                           <span class="fa fa-star-o checked"></span>
                           <%}%>
               </div>
-              <a href="/contato/<%- index %>">Detalhes</a>
         </div>
         <%})%>
 
@@ -75,9 +79,8 @@
         <%- include('./modal/deleteModal.ejs')%>
         <%- include('./modal/createModal.ejs')%>
     </div>
- 
-
     <a href="/sair">Sair</a>
+  </div>
     <%- include('../footer.ejs') %>
     <script src="JS/perfil.js"></script>
 </body>

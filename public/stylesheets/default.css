@@ -1,6 +1,7 @@
 /* navbar*/
 
 .navbar {
+  height:10vh;
   padding: 0 0 1.5rem;
 }
 
@@ -40,6 +41,7 @@ div.logo-e-copyright {
 }
 
 .footer-section {
+  color:white;
   background: #141414;;
   border-top: 1px solid #3e4143;
 }

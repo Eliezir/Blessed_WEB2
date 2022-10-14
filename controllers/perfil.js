@@ -10,6 +10,7 @@ module.exports = function(app){
             var comentario = req.body.comentario,
             usuario = req.session.usuario;
             usuario.comentarios.push(comentario);
+            console.log(usuario.comentarios)
             res.redirect("/perfil")
         },
         destroy: function (req, res) {
