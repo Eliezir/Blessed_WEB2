@@ -8,7 +8,6 @@ function setPoster(poster,type) {
     if (filme == poster) {
       posterPath = PosterFilmes[filmes.indexOf(poster)]
       if(type == 'edit'){
-        document.getElementById("filmePosterEdit").value = posterPath;
       return document.getElementById('posterModalEdit').src = `imagens/posters/${posterPath}`}
       else{
       document.getElementById("filmePoster").value = posterPath;

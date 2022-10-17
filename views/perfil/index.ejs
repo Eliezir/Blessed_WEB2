@@ -55,7 +55,7 @@
                 <div onClick='setId(this.id)' id=<%-index%>  class="icon-delete" data-bs-toggle="modal" data-bs-target="#modalDelete">
                   <i class="fa-solid fa-trash"></i>
                 </div>
-                <div class="icon-show">
+                <div class="icon-show" id=<%-index%>  class="icon-delete" data-bs-toggle="modal" data-bs-target="#modalShow">
                   <i class="fa-solid fa-info"></i>
                 </div>
 
@@ -79,11 +79,26 @@
         <%- include('./modal/deleteModal.ejs')%>
         <%- include('./modal/createModal.ejs')%>
         <%- include('./modal/editModal.ejs')%>
+        <%- include('./modal/showModal.ejs')%>
     </div>
     <a href="/sair">Sair</a>
   </div>
     <%- include('../footer.ejs') %>
     <script src="JS/perfil.js"></script>
+    <script>
+     function setEditId(index){ 
+      /* aqui ele fala que da erro mas roda normal */
+       // @ts-ignore
+      var user =  <%-JSON.stringify(usuario)%>
+      console.log();
+      document.getElementById('editButton').action = `/perfil/comentario/${index}/editar`
+      document.getElementById('filmeTitleEdit').value   =user.comentarios[index].filme;
+      document.getElementById('inputNota').value = user.comentarios[index].nota;
+      document.getElementById('inputComentarioEdit').value = user.comentarios[index].review
+      document.getElementById('posterModalEdit').src = `imagens/posters/${user.comentarios[index].poster}`
+      document.getElementById("filmePosterEdit").value = user.comentarios[index].poster
+      document.getElementById(`EditStar`+ user.comentarios[index].nota).click();
+    }
+    </script>
 </body>
-
 </html>
