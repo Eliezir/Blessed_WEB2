@@ -9,18 +9,19 @@
         <form id='editButton' action="/perfil/comentario" method="post">
           <div class="modal-body">
             <div class="bodyField">
-              <input id="filmeTitleEdit" class="0" autocomplete="off" type="text" name="comentario[filme]" placeholder="Titulo"  value="<%-usuario.comentarios[0].filme %>"/>
+              <input id="filmeTitleEdit" class="0" autocomplete="off" type="text" name="comentario[filme]"  onchange="setPoster(this.value,'edit')" value="<%-usuario.comentarios[0].filme %>"/>
               <input id="inputNotaEdit" type="hidden" name="comentario[nota]" value=''/>
+              <input id="filmePosterEdit" type="hidden" name="comentario[poster]" />
               <textarea id="inputComentarioEdit"   name="comentario[review]"><%-'key'%> </textarea>
             </div>
             <div class="bodyField">
-              <img class='posterModal' src="">
+              <img class='posterModal' id='posterModalEdit' src="">
               <div class='rating'>
-                <span id='star1' class="fa fa-star-o checked ratingStars"></span>
-                <span id='star2' class="fa fa-star-o checked ratingStars"></span>
-                <span id='star3' class="fa fa-star-o checked ratingStars"></span>
-                <span id='star4' class="fa fa-star-o checked ratingStars"></span>
-                <span id='star5' class="fa fa-star-o checked ratingStars"></span>
+                <span id='EditStar1' class="fa fa-star-o checked ratingStars"></span>
+                <span id='EditStar2' class="fa fa-star-o checked ratingStars"></span>
+                <span id='EditStar3' class="fa fa-star-o checked ratingStars"></span>
+                <span id='EditStar4' class="fa fa-star-o checked ratingStars"></span>
+                <span id='EditStar5' class="fa fa-star-o checked ratingStars"></span>
               </div>
             </div>
           </div>

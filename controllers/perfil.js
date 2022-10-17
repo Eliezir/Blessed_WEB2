@@ -5,12 +5,12 @@ module.exports = function(app){
             let comentarios = usuario.comentarios
             let params = {usuario: usuario, comentarios: comentarios}
             res.render("perfil/index", params)
+           
         },
         create: function(req, res){
             var comentario = req.body.comentario,
             usuario = req.session.usuario;
             usuario.comentarios.push(comentario);
-            console.log(usuario)
             res.redirect("/perfil")
         },
         destroy: function (req, res) {
@@ -32,6 +32,7 @@ module.exports = function(app){
           /*   comentario = usuario.comentarios[id], */
            /*  comentario = usuario.comentarios[id]; */
             usuario.comentarios[id] = comentario;
+            console.log(usuario)
             res.redirect("/perfil");
             },
         update: function (req, res) {
