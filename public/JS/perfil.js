@@ -39,6 +39,9 @@ $(function () {
   $("#filmeTitle").autocomplete({
     source: filmes
   });
+$("#filmeTitleEdit").autocomplete({
+  source: filmes
+});
 });
 
 /* Delete */
@@ -48,10 +51,13 @@ function setId(index) {
 }
 
 /* Edit */
-function setEditId(index,user){
-  console.log(user)
-  document.getElementById('filmeTitleEdit').value  =`usuario.comentarios[${index}].filme`
-  console.log(document.getElementById('filmeTitleEdit').value)
+function setEditId(index){
+  action="/contato/<%- id %>?_method=put"
+  document.getElementById('editButton').action = `/perfil/comentario/${index}/editar`
+ /*  console.log( document.getElementById('filmeTitleEdit').value)
+  document.getElementById('filmeTitleEdit').value   =usuario.comentarios[index].filme
   document.getElementById('inputNota').value = `usuario.comentarios[${index}].nota`
-  document.getElementById('inputComentarioEdit').innerHTML = `usuario.comentarios[${index}].review`;
+  document.getElementById('inputComentarioEdit').innerHTML = `usuario.comentarios[${index}].review`; */
  }
+
+

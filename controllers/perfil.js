@@ -27,10 +27,12 @@ module.exports = function(app){
         },
         edit: function (req, res) {
             var id = req.params.id,
-            usuario = req.session.usuario,
-            comentario = usuario.comentarios[id],
-            params = { usuario: usuario, comentario: comentario, id: id };
-            res.render("perfil/edit", params);
+            comentario = req.body.comentario;
+            usuario = req.session.usuario;
+          /*   comentario = usuario.comentarios[id], */
+           /*  comentario = usuario.comentarios[id]; */
+            usuario.comentarios[id] = comentario;
+            res.redirect("/perfil");
             },
         update: function (req, res) {
             var comentario = req.body.comentario,

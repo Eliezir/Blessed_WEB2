@@ -9,12 +9,12 @@
         <form id='editButton' action="/perfil/comentario" method="post">
           <div class="modal-body">
             <div class="bodyField">
-              <input id="filmeTitleEdit" class="0" autocomplete="off" type="text" name="comentario[filme]" placeholder="Titulo"  value="<%- usuario.comentarios[0].filme %>"  >
+              <input id="filmeTitleEdit" class="0" autocomplete="off" type="text" name="comentario[filme]" placeholder="Titulo"  value="<%-usuario.comentarios[0].filme %>"/>
               <input id="inputNotaEdit" type="hidden" name="comentario[nota]" value=''/>
               <textarea id="inputComentarioEdit"   name="comentario[review]"><%-'key'%> </textarea>
             </div>
             <div class="bodyField">
-              <img class='posterModal' src="imagens/atypicalPoster300.jpg">
+              <img class='posterModal' src="">
               <div class='rating'>
                 <span id='star1' class="fa fa-star-o checked ratingStars"></span>
                 <span id='star2' class="fa fa-star-o checked ratingStars"></span>
@@ -33,4 +33,3 @@
     </div>
   </div>
   </div>
-

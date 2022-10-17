@@ -1,0 +1,7 @@
+<%
+function setEditId(index,user){
+  document.getElementById('filmeTitleEdit').value   =user[index].filme
+  document.getElementById('inputNota').value = `usuario.comentarios[${index}].nota`
+  document.getElementById('inputComentarioEdit').innerHTML = `usuario.comentarios[${index}].review`;
+ }
+%>
