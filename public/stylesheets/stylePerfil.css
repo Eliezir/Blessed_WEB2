@@ -153,12 +153,12 @@ flex-direction: column
     flex-direction: column;
 }
 
-#filmeTitle,#inputComentario{
+#filmeTitle,#inputComentario,#filmeTitleEdit,#inputComentarioEdit{
     width:100%;
     margin-top:5px;
 }
 
-#inputComentario{
+#inputComentario,#inputComentarioEdit{
     height:100%
 }
 

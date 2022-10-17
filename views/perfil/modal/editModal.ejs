@@ -1,0 +1,36 @@
+<!--   Modal Create -->
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="modalCreateLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="CreateModalLabel">Editar Comentário </h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id='editButton' action="/perfil/comentario" method="post">
+          <div class="modal-body">
+            <div class="bodyField">
+              <input id="filmeTitleEdit" class="0" autocomplete="off" type="text" name="comentario[filme]" placeholder="Titulo"  value="<%- usuario.comentarios[0].filme %>"  >
+              <input id="inputNotaEdit" type="hidden" name="comentario[nota]" value=''/>
+              <textarea id="inputComentarioEdit"   name="comentario[review]"><%-'key'%> </textarea>
+            </div>
+            <div class="bodyField">
+              <img class='posterModal' src="imagens/atypicalPoster300.jpg">
+              <div class='rating'>
+                <span id='star1' class="fa fa-star-o checked ratingStars"></span>
+                <span id='star2' class="fa fa-star-o checked ratingStars"></span>
+                <span id='star3' class="fa fa-star-o checked ratingStars"></span>
+                <span id='star4' class="fa fa-star-o checked ratingStars"></span>
+                <span id='star5' class="fa fa-star-o checked ratingStars"></span>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+  
+            <button type="submit" class="btn btn-success btn-primary">Editar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  </div>
+

@@ -10,28 +10,25 @@ module.exports = function(app){
             var comentario = req.body.comentario,
             usuario = req.session.usuario;
             usuario.comentarios.push(comentario);
-            console.log(usuario.comentarios)
+            console.log(usuario)
             res.redirect("/perfil")
         },
         destroy: function (req, res) {
             var usuario = req.session.usuario,
             id = req.params.id;
             usuario.comentarios.splice(id, 1);
-            console.log(id)
             res.redirect("/perfil");
-            },
-
-
+            },  
         comentarios: function(req, res) {
             var id = req.params.id
-            comentario = req.session.usuario.comentario[id],
+            comentario = req.session.usuario.comentarios[id],
             parametro = {contato: contato, id:id};
             res.render("comentarios/show", params);
         },
         edit: function (req, res) {
             var id = req.params.id,
             usuario = req.session.usuario,
-            comentario = usuario.comentario[id],
+            comentario = usuario.comentarios[id],
             params = { usuario: usuario, comentario: comentario, id: id };
             res.render("perfil/edit", params);
             },

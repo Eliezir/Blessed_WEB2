@@ -49,7 +49,7 @@
             <%- comentario.filme%>
               </h1>
               <div class="crud-icons">
-                <div class="icon-edit">
+                <div onClick='setEditId(this.id )' id=<%-index%>  class="icon-edit" data-bs-toggle="modal" data-bs-target="#modalEdit">
                   <i class="fa-solid fa-pencil"></i>
                 </div>
                 <div onClick='setId(this.id)' id=<%-index%>  class="icon-delete" data-bs-toggle="modal" data-bs-target="#modalDelete">
@@ -60,7 +60,7 @@
                 </div>
 
               </div>
-               <img  class='posterComentario' src="imagens/cliches/tdsGarotos/todosOsGarotos300.png">
+               <img  class='posterComentario' src="imagens/posters/<%-comentario.poster%> ">
               <div class="rating">
                 <% for(var e=0; e < Math.floor(comentario.nota); e++){%>
                   <span class="fa fa-star checked"></span>
@@ -78,6 +78,7 @@
 
         <%- include('./modal/deleteModal.ejs')%>
         <%- include('./modal/createModal.ejs')%>
+        <%- include('./modal/editModal.ejs')%>
     </div>
     <a href="/sair">Sair</a>
   </div>
