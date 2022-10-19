@@ -32,7 +32,6 @@ module.exports = function(app){
           /*   comentario = usuario.comentarios[id], */
            /*  comentario = usuario.comentarios[id]; */
             usuario.comentarios[id] = comentario;
-            console.log(usuario)
             res.redirect("/perfil");
             },
         update: function (req, res) {
