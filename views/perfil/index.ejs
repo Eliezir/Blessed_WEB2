@@ -49,6 +49,7 @@
             <%- comentario.filme%>
               </h1>
               <div class="crud-icons">
+               <!--  define o id do botão com o index do comentario  no array comentarios -->
                 <div onClick='setEditId(this.id )' id=<%-index%>  class="icon-edit" data-bs-toggle="modal" data-bs-target="#modalEdit">
                   <i class="fa-solid fa-pencil"></i>
                 </div>
@@ -75,7 +76,7 @@
         </div>
         <%})%>
 
-
+       <!--  Modais CRUD -->
         <%- include('./modal/deleteModal.ejs')%>
         <%- include('./modal/createModal.ejs')%>
         <%- include('./modal/editModal.ejs')%>
@@ -86,6 +87,8 @@
     <%- include('../footer.ejs') %>
     <script src="JS/perfil.js"></script>
     <script>
+
+    /*   Função para exibir os valores no modal de editar comentarios */
      function setEditId(index){ 
       /* aqui ele fala que da erro mas roda normal */
        // @ts-ignore
