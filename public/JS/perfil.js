@@ -1,5 +1,4 @@
 /* Create  */
-
 var id;
 var posterPath;
 let PosterFilmes = ["arcanePoster300.jpg", "atypicalPoster300.jpg", "auto_da_compadecidaPoster.jpg", "Brooklyn99Poster300.jpg", "ClickPoster300.png", "comoSeFosse300.png", "DrWhoPoster300.jpg", "How_I_Met_Mother.jpg", "MaldicaoHillPoster300.jpg", "oneDayAtTimePoster300.jpg", "StrangerThings.jpg", "TheofficePoster300.jpg", "UmFazDeContaPoster300.jpg"]
@@ -33,6 +32,7 @@ function setNota(tipoEstrela){
   }
 }
 
+let showStars;
 document.querySelectorAll(".ratingStars").forEach(star => {
   star.addEventListener("click", function () {
     starNumber = parseInt(this.id.slice(-1))
@@ -41,9 +41,14 @@ document.querySelectorAll(".ratingStars").forEach(star => {
       setNota('star')
       document.getElementById("inputNota").value = starNumber;
     }
-    else {
+    else if(this.id.length==9){
       setNota('EditStar')
       document.getElementById("inputNotaEdit").value = starNumber;
+    }
+    else if(showStars){
+      setNota('readStars')
+      document.getElementById("inputNotaShow").value = starNumber;
+      showStars = false;
     }
   })
 })
@@ -66,13 +71,16 @@ function setId(index) {
 }
 
 /* Edit */
-function setEditId(index){
+/* function setEditId(index){
   action="/contato/<%- id %>?_method=put"
   document.getElementById('editButton').action = `/perfil/comentario/${index}/editar`
   console.log( document.getElementById('filmeTitleEdit').value)
   document.getElementById('filmeTitleEdit').value   =`usuario.comentarios[${index}].filme`
   document.getElementById('inputNota').value = `usuario.comentarios[${index}].nota`
   document.getElementById('inputComentarioEdit').innerHTML = `usuario.comentarios[${index}].review`;
- }
+ } */
 
-
+/* Read */
+function setShowStars(){ 
+  showStars=true;
+}

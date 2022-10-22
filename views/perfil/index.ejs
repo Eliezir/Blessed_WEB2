@@ -56,7 +56,7 @@
                 <div onClick='setId(this.id)' id=<%-index%>  class="icon-delete" data-bs-toggle="modal" data-bs-target="#modalDelete">
                   <i class="fa-solid fa-trash"></i>
                 </div>
-                <div class="icon-show" id=<%-index%>  class="icon-delete" data-bs-toggle="modal" data-bs-target="#modalShow">
+                <div onClick=' setShowStars(); setShowId(this.id )' class="icon-show" id=<%-index%>  class="icon-delete" data-bs-toggle="modal" data-bs-target="#modalShow">
                   <i class="fa-solid fa-info"></i>
                 </div>
 
@@ -77,10 +77,10 @@
         <%})%>
 
        <!--  Modais CRUD -->
+       <%- include('./modal/createModal.ejs')%> 
+       <%- include('./modal/showModal.ejs', {star: 'teste'}) %>
+       <%- include('./modal/editModal.ejs')%>
         <%- include('./modal/deleteModal.ejs')%>
-        <%- include('./modal/createModal.ejs')%>
-        <%- include('./modal/editModal.ejs')%>
-        <%- include('./modal/showModal.ejs')%>
     </div>
     <a href="/sair">Sair</a>
   </div>
@@ -92,7 +92,7 @@
      function setEditId(index){ 
       /* aqui ele fala que da erro mas roda normal */
        // @ts-ignore
-      var user =  <%-JSON.stringify(usuario)%>
+      let user =  <%-JSON.stringify(usuario)%>
       console.log();
       document.getElementById('editButton').action = `/perfil/comentario/${index}/editar`
       document.getElementById('filmeTitleEdit').value   =user.comentarios[index].filme;
@@ -101,6 +101,20 @@
       document.getElementById('posterModalEdit').src = `imagens/posters/${user.comentarios[index].poster}`
       document.getElementById("filmePosterEdit").value = user.comentarios[index].poster
       document.getElementById(`EditStar`+ user.comentarios[index].nota).click();
+    }
+
+    function setShowId(index){ 
+      /* aqui ele fala que da erro mas roda normal */
+       // @ts-ignore
+      let user =  <%-JSON.stringify(usuario)%>
+      console.log();
+      document.getElementById('showFilmeTitle').innerHTML  = user.comentarios[index].filme;
+      document.getElementById('inputNotaShow').value = user.comentarios[index].nota;
+      document.getElementById('inputComentarioShow').value = user.comentarios[index].review
+      document.getElementById('posterModalShow').src = `imagens/posters/${user.comentarios[index].poster}`
+      document.getElementById('inputNotaShow').value = user.comentarios[index].nota;
+      document.getElementById(`readStars`+ user.comentarios[index].nota).click();
+      
     }
     </script>
 </body>

@@ -11,7 +11,18 @@ module.exports = function(app){
             var comentario = req.body.comentario,
             usuario = req.session.usuario;
             usuario.comentarios.push(comentario);
+            console.log('teste')
             res.redirect("/perfil")
+        },
+        edit: function (req, res) {
+            var id = req.params.id,
+            comentario = req.body.comentario;
+            usuario = req.session.usuario;
+          /*   comentario = usuario.comentarios[id], */
+           /*  comentario = usuario.comentarios[id]; */
+            usuario.comentarios[id] = comentario;
+            console.log(usuario)
+            res.redirect("/perfil");
         },
         destroy: function (req, res) {
             var usuario = req.session.usuario,
@@ -25,22 +36,12 @@ module.exports = function(app){
             parametro = {contato: contato, id:id};
             res.render("comentarios/show", params);
         },
-        edit: function (req, res) {
-            var id = req.params.id,
-            comentario = req.body.comentario;
-            usuario = req.session.usuario;
-          /*   comentario = usuario.comentarios[id], */
-           /*  comentario = usuario.comentarios[id]; */
-            usuario.comentarios[id] = comentario;
-            res.redirect("/perfil");
-            },
         update: function (req, res) {
             var comentario = req.body.comentario,
             usuario = req.session.usuario;
             usuario.comentarios[req.params.id] = comentario;
             res.redirect("/comentarios");
             },
-           
     }
     return PerfilController;
 }
