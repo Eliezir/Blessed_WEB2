@@ -6,4 +6,5 @@ module.exports = function(app){
     app.get("/login",home.loginPage);
     app.post('/entrar',home.login)
     app.get('/sair', home.logout)
+    app.get('/sobre',home.sobre)
 }

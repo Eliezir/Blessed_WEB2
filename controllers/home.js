@@ -5,6 +5,11 @@ module.exports = function(app){
             let params = {usuario: usuario}
             res.render("home/index",params)
         },
+        sobre: function(req,res){
+            usuario = req.session.usuario;
+            res.render("home/sobre",usuario)
+        }
+        ,
         login: function(req,res){
             let user = req.body.usuario.user;
             let password = req.body.usuario.password;
