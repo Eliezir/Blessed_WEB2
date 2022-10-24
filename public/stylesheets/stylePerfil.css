@@ -186,3 +186,16 @@ flex-direction: column
     .comentarios{
         justify-content: center}
  }
+
+ .warningFilme{
+     visibility: hidden;
+     display: none;
+     color:red;
+     margin: 0;
+     font-size: 10px;
+ }
+
+ .wrongMovie{
+     visibility:visible !important;
+     display: block;
+ }

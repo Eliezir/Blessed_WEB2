@@ -9,6 +9,7 @@
         <form id='editButton' action="/perfil/comentario" method="post">
           <div class="modal-body">
             <div class="bodyField">
+              <p class='warningFilme'>Filme invalido</p>
               <input id="filmeTitleEdit" class="0" autocomplete="off" type="text" name="comentario[filme]"  onchange="setPoster(this.value,'edit')" value="<%-usuario.comentarios[0].filme %>"/>
               <input id="inputNotaEdit" type="hidden" name="comentario[nota]" value=''/>
               <input id="filmePosterEdit" type="hidden" name="comentario[poster]" />
@@ -28,7 +29,7 @@
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
   
-            <button type="submit" class="btn btn-success btn-primary">Editar</button>
+            <button onClick="checkSubmit(edit)" type="submit" class="btn btn-success btn-primary">Editar</button>
         </form>
       </div>
     </div>

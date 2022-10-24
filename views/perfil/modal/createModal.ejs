@@ -11,6 +11,7 @@
         <div class="modal-body">
           <div class="bodyField">
             <input id="filmeTitle" onchange="setPoster(this.value)" autocomplete="off" type="text" name="comentario[filme]" placeholder="Titulo" />
+            <p class='warningFilme'>Filme invalido</p>
             <input id="inputNota" type="hidden" name="comentario[nota]" />
             <input id="filmePoster" type="hidden" name="comentario[poster]" />
             <textarea id="inputComentario" name="comentario[review]"></textarea>
@@ -29,7 +30,7 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 
-          <button type="submit" class="btn btn-success btn-primary">Comentar</button>
+          <button id='btnCreateComentario'type="submit" class="btn btn-success btn-primary">Comentar</button>
       </form>
     </div>
   </div>

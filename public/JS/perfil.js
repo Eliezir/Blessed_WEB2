@@ -7,6 +7,7 @@ function setPoster(poster,type) {
     if (filme == poster) {
       posterPath = PosterFilmes[filmes.indexOf(poster)]
       if(type == 'edit'){
+        document.getElementById("filmePosterEdit").value = posterPath;
       return document.getElementById('posterModalEdit').src = `imagens/posters/${posterPath}`}
       else{
       document.getElementById("filmePoster").value = posterPath;
@@ -14,8 +15,17 @@ function setPoster(poster,type) {
     }
     }
   })
+  if(!filmes.includes(poster)){
+    document.getElementById("filmeTitle").style.borderColor = "red";
+    document.querySelectorAll(".warningFilme").forEach(warning => {
+      warning.classList.add("wrongMovie")
+    })
+  }
+  else{
+  document.getElementById("filmeTitle").style.borderColor = "rgb(118, 118, 118)";
+  document.querySelectorAll(".warningFilme").forEach(warning =>{warning. classList.remove("wrongMovie")})
 
-}
+}}
 
 function setNota(tipoEstrela){
   for (var x = 1; x <= 5; x++) {
@@ -83,4 +93,27 @@ function setId(index) {
 /* Read */
 function setShowStars(){ 
   showStars=true;
+}
+
+
+/* Verificação create/edit */
+
+var btnCreate = document.getElementById('btnCreateComentario');
+/* var btnEdit = document.getElementById('btnCreateComentario'); */
+
+btnCreate.addEventListener('click',() =>{
+
+})
+
+const checkSubmit (type)=>{
+  if(type == 'edit'){
+    var nota = document.getElementById("inputNotaEdit").value;
+    var titulo = document.getElementById("filmeTitleEdit").value;
+    var comentario = document.getElementById("inputComentarioEdit").value;
+    console.log(titulo)
+    if(!nota || !titulo || !comentario ){
+    alert("por favor, preencha todos os campos com valores validos")
+      console.log(erro)
+  }
+  }
 }
