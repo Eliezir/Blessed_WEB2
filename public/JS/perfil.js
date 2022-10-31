@@ -105,15 +105,13 @@ btnCreate.addEventListener('click',() =>{
 
 })
 
-const checkSubmit (type)=>{
+const checkSubmit = (type)=>{
   if(type == 'edit'){
     var nota = document.getElementById("inputNotaEdit").value;
     var titulo = document.getElementById("filmeTitleEdit").value;
     var comentario = document.getElementById("inputComentarioEdit").value;
-    console.log(titulo)
     if(!nota || !titulo || !comentario ){
     alert("por favor, preencha todos os campos com valores validos")
-      console.log(erro)
-  }
+ }
   }
 }
